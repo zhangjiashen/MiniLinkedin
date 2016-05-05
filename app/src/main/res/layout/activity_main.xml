@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.jiuzhang.guojing.awesomeresume.MainActivity">
 
     <LinearLayout
@@ -22,13 +23,29 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/name"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="25sp"
                     android:layout_marginBottom="12dp"
-                    tools:text="Jing Guo" />
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        tools:text="Jing Guo" />
+
+                    <ImageButton
+                        android:id="@+id/edit_basic_info"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:src="@mipmap/ic_mode_edit_black_18dp"
+                        android:alpha="0.7"
+                        android:background="?attr/selectableItemBackground" />
+
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/email"
@@ -73,42 +90,33 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/educations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/education_school"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="CMU (2012 ~ 2016)" />
+
+            <ImageButton
+                android:id="@+id/edit_education_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_mode_edit_black_18dp"
+                android:alpha="0.7"
+                android:background="?attr/selectableItemBackground" />
 
         </LinearLayout>
 
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:gravity="center_vertical">-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/education_school"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_weight="1"-->
-        <!--tools:text="CMU (2012 ~ 2016)" />-->
-
-        <!--<ImageButton-->
-        <!--android:id="@+id/edit_education_btn"-->
-        <!--android:layout_width="24dp"-->
-        <!--android:layout_height="24dp"-->
-        <!--android:src="@mipmap/ic_mode_edit_black_18dp"-->
-        <!--android:alpha="0.7"-->
-        <!--android:background="?attr/selectableItemBackground" />-->
-
-        <!--</LinearLayout>-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/education_courses"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="24dp"-->
-        <!--tools:text="- Database\n- Algorithm\n- Network" />-->
+        <TextView
+            android:id="@+id/education_courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="- Database\n- Algorithm\n- Network" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -138,40 +146,32 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/experiences"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/experience_company"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Linkedin (Mar ~ Aug 2015)" />
+
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_mode_edit_black_18dp"
+                android:alpha="0.7"
+                android:background="?attr/selectableItemBackground"/>
 
         </LinearLayout>
 
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:gravity="center_vertical">-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/experience_company"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_weight="1"-->
-        <!--tools:text="Linkedin (Mar ~ Aug 2015)" />-->
-
-        <!--<ImageButton-->
-        <!--android:layout_width="24dp"-->
-        <!--android:layout_height="24dp"-->
-        <!--android:src="@mipmap/ic_mode_edit_black_18dp"-->
-        <!--android:alpha="0.7"-->
-        <!--android:background="?attr/selectableItemBackground"/>-->
-
-        <!--</LinearLayout>-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/experience_details"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--tools:text="- Completed xxx using xxx\n- Algorithm\n- Network" />-->
+        <TextView
+            android:id="@+id/experience_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="- Completed xxx using xxx\n- Algorithm\n- Network" />
 
         <LinearLayout
             android:layout_width="match_parent"
