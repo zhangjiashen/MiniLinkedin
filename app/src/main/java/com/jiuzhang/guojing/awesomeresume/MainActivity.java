@@ -109,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
         setupBasicInfo(basicInfo);
         setupEducations();
         setupExperiences();
-//        setupEducation(education);
-//        setupExperience(experience);
     }
 
     private void setupBasicInfo(BasicInfo basicInfo) {
@@ -127,15 +125,6 @@ public class MainActivity extends AppCompatActivity {
             educationsLayout.addView(educationView);
         }
     }
-
-//    private void setupEducation(Education education) {
-//        String dateString = DateUtils.dateToString(education.startDate)
-//                + " ~ " + DateUtils.dateToString(education.endDate);
-//        ((TextView) findViewById(R.id.education_school))
-//                .setText(education.school + " (" + dateString + ")");
-//        ((TextView) findViewById(R.id.education_courses))
-//                .setText(formatItems(education.courses));
-//    }
 
     private void setupEducation(View educationView, final Education education) {
         String dateString = DateUtils.dateToString(education.startDate)
@@ -184,16 +173,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-//    private void setupExperience(Experience experience) {
-//        String dateString = DateUtils.dateToString(experience.startDate)
-//                + " ~ " + DateUtils.dateToString(experience.endDate);
-//        ((TextView) findViewById(R.id.experience_company))
-//                .setText(experience.company + " (" + dateString + ")");
-//        ((TextView) findViewById(R.id.experience_details))
-//                .setText(formatItems(experience.details));
-//    }
-
 
     private void loadData() {
         basicInfo = new BasicInfo();
