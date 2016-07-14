@@ -85,9 +85,6 @@ public class MainActivity extends AppCompatActivity {
     private void setupUI() {
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         ImageButton addEducationBtn = (ImageButton) findViewById(R.id.add_education_btn);
         addEducationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
