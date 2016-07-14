@@ -27,6 +27,8 @@ public class ExperienceEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_experience_edit);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         experience = getIntent().getParcelableExtra(KEY_EXPERIENCE);
         if (experience != null) {
             setupUI();
@@ -41,9 +43,13 @@ public class ExperienceEditActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.ic_save) {
-            saveAndExit();
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.ic_save:
+                saveAndExit();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

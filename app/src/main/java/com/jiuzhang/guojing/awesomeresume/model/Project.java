@@ -16,6 +16,10 @@ public class Project implements Parcelable {
 
     public List<String> details;
 
+    public Project() {
+
+    }
+
     protected Project(Parcel in) {
         name = in.readString();
         startDate = new Date(in.readLong());

@@ -27,6 +27,8 @@ public class EducationEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_education_edit);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         education = getIntent().getParcelableExtra(KEY_EDUCATION);
         if (education != null) {
             setupUI();
@@ -41,9 +43,13 @@ public class EducationEditActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.ic_save) {
-            saveAndExit();
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.ic_save:
+                saveAndExit();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

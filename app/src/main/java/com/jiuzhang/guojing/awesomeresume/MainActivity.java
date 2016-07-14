@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.jiuzhang.guojing.awesomeresume.model.BasicInfo;
 import com.jiuzhang.guojing.awesomeresume.model.Education;
 import com.jiuzhang.guojing.awesomeresume.model.Experience;
+import com.jiuzhang.guojing.awesomeresume.model.Project;
 import com.jiuzhang.guojing.awesomeresume.util.DateUtils;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private BasicInfo basicInfo;
     private Education education;
     private Experience experience;
+    private Project project;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +77,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton addProjectBtn = (ImageButton) findViewById(R.id.add_project_btn);
+        addProjectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ProjectEditActivity.class);
+                startActivity(intent);
+            }
+        });
+
         setupBasicInfo(basicInfo);
         setupEducation(education);
         setupExperience(experience);
+        setupProject(project);
     }
 
     private void setupBasicInfo(BasicInfo basicInfo) {
@@ -101,6 +113,15 @@ public class MainActivity extends AppCompatActivity {
                 .setText(experience.company + " (" + dateString + ")");
         ((TextView) findViewById(R.id.experience_details))
                 .setText(formatItems(experience.details));
+    }
+
+    private void setupProject(Project project) {
+        String dateString = DateUtils.dateToString(project.startDate)
+                + " ~ " + DateUtils.dateToString(project.endDate);
+        ((TextView) findViewById(R.id.project_name))
+                .setText(project.name + " (" + dateString + ")");
+        ((TextView) findViewById(R.id.project_details))
+                .setText(formatItems(project.details));
     }
 
     private void fakeData() {
@@ -127,11 +148,22 @@ public class MainActivity extends AppCompatActivity {
         experience.startDate = DateUtils.stringToDate("09/2015");
         experience.endDate = DateUtils.stringToDate("04/2016");
 
-        List<String> details = new ArrayList<>();
-        details.add("Built something using some tech");
-        details.add("Built something using some tech");
-        details.add("Built something using some tech");
-        experience.details = details;
+        List<String> experienceDetails = new ArrayList<>();
+        experienceDetails.add("Built something using some tech");
+        experienceDetails.add("Built something using some tech");
+        experienceDetails.add("Built something using some tech");
+        experience.details = experienceDetails;
+
+        project = new Project();
+        project.name = "AwesomeResume - an Android resume app";
+        project.startDate = DateUtils.stringToDate("10/2015");
+        project.endDate = DateUtils.stringToDate("11/2015");
+
+        List<String> projectDetails = new ArrayList<>();
+        projectDetails.add("Completed xxx using xxx");
+        projectDetails.add("Completed xxx using xxx");
+        projectDetails.add("Completed xxx using xxx");
+        project.details = projectDetails;
     }
 
     public static String formatItems(List<String> items) {
