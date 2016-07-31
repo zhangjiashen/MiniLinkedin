@@ -86,18 +86,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        setupBasicInfo(basicInfo);
-        setupEducation(education);
-        setupExperience(experience);
-        setupProject(project);
+        setupBasicInfo();
+        setupEducation();
+        setupExperience();
+        setupProject();
     }
 
-    private void setupBasicInfo(BasicInfo basicInfo) {
+    private void setupBasicInfo() {
         ((TextView) findViewById(R.id.name)).setText(basicInfo.name);
         ((TextView) findViewById(R.id.email)).setText(basicInfo.email);
     }
 
-    private void setupEducation(Education education) {
+    private void setupEducation() {
         String dateString = DateUtils.dateToString(education.startDate)
                 + " ~ " + DateUtils.dateToString(education.endDate);
         ((TextView) findViewById(R.id.education_school))
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 .setText(formatItems(education.courses));
     }
 
-    private void setupExperience(Experience experience) {
+    private void setupExperience() {
         String dateString = DateUtils.dateToString(experience.startDate)
                 + " ~ " + DateUtils.dateToString(experience.endDate);
         ((TextView) findViewById(R.id.experience_company))
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 .setText(formatItems(experience.details));
     }
 
-    private void setupProject(Project project) {
+    private void setupProject() {
         String dateString = DateUtils.dateToString(project.startDate)
                 + " ~ " + DateUtils.dateToString(project.endDate);
         ((TextView) findViewById(R.id.project_name))
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         basicInfo.email = "guojing@jiuzhang.com";
 
         education = new Education();
-        education.school = "CMU";
+        education.school = "THU";
         education.major = "Computer Science";
         education.startDate = DateUtils.stringToDate("09/2013");
         education.endDate = DateUtils.stringToDate("09/2015");
