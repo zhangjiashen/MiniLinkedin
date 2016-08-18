@@ -33,6 +33,8 @@ public class EducationEditActivity extends AppCompatActivity {
         if (education != null) {
             setupUI();
         }
+
+        setTitle(education == null ? "New education" : "Edit education");
     }
 
     @Override

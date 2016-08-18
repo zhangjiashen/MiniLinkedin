@@ -38,7 +38,7 @@
                     android:layout_width="@dimen/icon_button_size"
                     android:layout_height="@dimen/icon_button_size"
                     android:layout_marginLeft="@dimen/spacing_xsmall"
-                    android:src="@mipmap/ic_mode_edit_black_18dp"
+                    android:src="@drawable/ic_mode_edit_black_18dp"
                     android:alpha="@dimen/icon_button_alpha"
                     android:background="?attr/selectableItemBackground" />
 
@@ -58,7 +58,7 @@
                 android:layout_width="@dimen/user_picture_size"
                 android:layout_height="@dimen/user_picture_size"
                 android:layout_alignParentRight="true"
-                android:src="@mipmap/guojing"/>
+                android:src="@drawable/guojing"/>
 
         </RelativeLayout>
 
@@ -74,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="@dimen/icon_button_size"
+                android:textSize="@dimen/caption_text_size"
                 android:textAllCaps="true"
                 android:text="@string/section_education" />
 
@@ -82,40 +82,18 @@
                 android:id="@+id/add_education_btn"
                 android:layout_width="@dimen/icon_button_size"
                 android:layout_height="@dimen/icon_button_size"
-                android:src="@mipmap/ic_add_black_18dp"
+                android:src="@drawable/ic_add_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/edit_education"/>
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/educations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/education_school"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:text="CMU (2012 ~ 2016)" />
-
-            <ImageButton
-                android:id="@+id/edit_education_btn"
-                android:layout_width="@dimen/icon_button_size"
-                android:layout_height="@dimen/icon_button_size"
-                android:src="@mipmap/ic_mode_edit_black_18dp"
-                android:alpha="@dimen/icon_button_alpha"
-                android:background="?attr/selectableItemBackground" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/education_courses"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="- Database\n- Algorithm\n- Network" />
+            android:orientation="vertical"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -129,7 +107,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="@dimen/icon_button_size"
+                android:textSize="@dimen/caption_text_size"
                 android:textAllCaps="true"
                 android:text="@string/section_experience"/>
 
@@ -137,9 +115,10 @@
                 android:id="@+id/add_experience_btn"
                 android:layout_width="@dimen/icon_button_size"
                 android:layout_height="@dimen/icon_button_size"
-                android:src="@mipmap/ic_add_black_18dp"
+                android:src="@drawable/ic_add_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/edit_experience"/>
 
         </LinearLayout>
 
@@ -159,7 +138,7 @@
             <ImageButton
                 android:layout_width="@dimen/icon_button_size"
                 android:layout_height="@dimen/icon_button_size"
-                android:src="@mipmap/ic_mode_edit_black_18dp"
+                android:src="@drawable/ic_mode_edit_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
                 android:background="?attr/selectableItemBackground"/>
 
@@ -183,7 +162,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="@dimen/icon_button_size"
+                android:textSize="@dimen/caption_text_size"
                 android:textAllCaps="true"
                 android:text="@string/section_projects"/>
 
@@ -191,7 +170,7 @@
                 android:id="@+id/add_project_btn"
                 android:layout_width="@dimen/icon_button_size"
                 android:layout_height="@dimen/icon_button_size"
-                android:src="@mipmap/ic_add_black_18dp"
+                android:src="@drawable/ic_add_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
                 android:background="?attr/selectableItemBackground"/>
 
@@ -213,7 +192,7 @@
             <ImageButton
                 android:layout_width="@dimen/icon_button_size"
                 android:layout_height="@dimen/icon_button_size"
-                android:src="@mipmap/ic_mode_edit_black_18dp"
+                android:src="@drawable/ic_mode_edit_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
                 android:background="?attr/selectableItemBackground"/>
 

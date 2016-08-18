@@ -5,8 +5,11 @@ import android.os.Parcelable;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class Education implements Parcelable {
+
+    public String id;
 
     public String school;
 
@@ -19,10 +22,11 @@ public class Education implements Parcelable {
     public List<String> courses;
 
     public Education() {
-
+        id = UUID.randomUUID().toString();
     }
 
     protected Education(Parcel in) {
+        id = in.readString();
         school = in.readString();
         major = in.readString();
         startDate = new Date(in.readLong());
@@ -49,6 +53,7 @@ public class Education implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
         dest.writeString(school);
         dest.writeString(major);
         dest.writeLong(startDate.getTime());
