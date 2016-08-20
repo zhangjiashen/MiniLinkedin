@@ -85,7 +85,7 @@
                 android:src="@drawable/ic_add_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/edit_education"/>
+                android:contentDescription="@string/add_education"/>
 
         </LinearLayout>
 
@@ -118,7 +118,7 @@
                 android:src="@drawable/ic_add_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/edit_experience"/>
+                android:contentDescription="@string/add_experience"/>
 
         </LinearLayout>
 
@@ -140,7 +140,8 @@
                 android:layout_height="@dimen/icon_button_size"
                 android:src="@drawable/ic_mode_edit_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/edit_experience"/>
 
         </LinearLayout>
 
@@ -172,7 +173,8 @@
                 android:layout_height="@dimen/icon_button_size"
                 android:src="@drawable/ic_add_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/add_project"/>
 
         </LinearLayout>
 
@@ -194,7 +196,8 @@
                 android:layout_height="@dimen/icon_button_size"
                 android:src="@drawable/ic_mode_edit_black_18dp"
                 android:alpha="@dimen/icon_button_alpha"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/edit_project"/>
 
         </LinearLayout>
 

@@ -12,8 +12,13 @@
     <string name="section_experience">Experience</string>
     <string name="section_projects">Projects</string>
 
+    <string name="add_education">Add education</string>
+    <string name="add_experience">Add experience</string>
+    <string name="add_project">Add project</string>
     <string name="education_school">School</string>
     <string name="education_major">Major</string>
     <string name="education_courses">Courses</string>
+
     <string name="edit_experience">Edit experience</string>
+    <string name="edit_project">Edit project</string>
 </resources>
