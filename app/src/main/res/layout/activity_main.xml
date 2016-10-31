@@ -5,225 +5,32 @@
     android:layout_height="match_parent"
     tools:context="com.jiuzhang.guojing.awesomeresume.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/spacing_medium"
-        android:orientation="vertical">
+    <!--
+        TODO 5: Combine 4 views by LinearLayout
+        Combine 4 views (name, edit_basic_info, email, user_picture) by 3 nested LinearLayout
+        [1] put name and edit_basic_info into a LinearLayout with orientation "horizontal"
+        [2] put LinearLayout in [1] and email into a LinearLayout with orientation "vertical"
+        [3] put LinearLayout in [2] and user_picture into a LinearLayout with orientation "horizontal"
+    -->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <!--
+        TODO 1: add TextView
+        add TextView with id "name" here
+    -->
 
-            <LinearLayout
-                android:id="@+id/user_name_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:layout_alignParentLeft="true"
-                android:layout_toLeftOf="@+id/user_picture"
-                android:gravity="center_vertical">
+    <!--
+        TODO 2: add ImageButton
+        add ImageButton with id "edit_basic_info" here
+    -->
 
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/caption_text_size"
-                    tools:text="Jing Guo" />
+    <!--
+        TODO 3: add TextView
+        add TextView with id "email" here
+    -->
 
-                <ImageButton
-                    android:id="@+id/edit_basic_info"
-                    android:layout_width="@dimen/icon_button_size"
-                    android:layout_height="@dimen/icon_button_size"
-                    android:layout_marginLeft="@dimen/spacing_xsmall"
-                    android:src="@drawable/ic_mode_edit_black_18dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="@string/edit_name"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/user_name_layout"
-                android:layout_toLeftOf="@+id/user_picture"
-                tools:text="guojing@jiuzhang.com" />
-
-            <ImageView
-                android:id="@+id/user_picture"
-                android:layout_width="@dimen/user_picture_size"
-                android:layout_height="@dimen/user_picture_size"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/guojing"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:layout_marginBottom="@dimen/spacing_small">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/caption_text_size"
-                android:textAllCaps="true"
-                android:text="@string/section_education" />
-
-            <ImageButton
-                android:id="@+id/add_education_btn"
-                android:layout_width="@dimen/icon_button_size"
-                android:layout_height="@dimen/icon_button_size"
-                android:src="@drawable/ic_add_black_18dp"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/add_education"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/education_school"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:text="CMU (2012 ~ 2016)" />
-
-            <ImageButton
-                android:id="@+id/edit_education_btn"
-                android:layout_width="@dimen/icon_button_size"
-                android:layout_height="@dimen/icon_button_size"
-                android:src="@drawable/ic_mode_edit_black_18dp"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/edit_education"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/education_courses"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="- Database\n- Algorithm\n- Network" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:layout_marginBottom="@dimen/spacing_small">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/caption_text_size"
-                android:textAllCaps="true"
-                android:text="@string/section_experience"/>
-
-            <ImageButton
-                android:id="@+id/add_experience_btn"
-                android:layout_width="@dimen/icon_button_size"
-                android:layout_height="@dimen/icon_button_size"
-                android:src="@drawable/ic_add_black_18dp"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/add_experience"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/experience_company"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:text="Linkedin (Mar ~ Aug 2015)" />
-
-            <ImageButton
-                android:layout_width="@dimen/icon_button_size"
-                android:layout_height="@dimen/icon_button_size"
-                android:src="@drawable/ic_mode_edit_black_18dp"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/edit_experience"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/experience_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="- Completed xxx using xxx\n- Algorithm\n- Network" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:layout_marginBottom="@dimen/spacing_small">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/caption_text_size"
-                android:textAllCaps="true"
-                android:text="@string/section_projects"/>
-
-            <ImageButton
-                android:id="@+id/add_project_btn"
-                android:layout_width="@dimen/icon_button_size"
-                android:layout_height="@dimen/icon_button_size"
-                android:src="@drawable/ic_add_black_18dp"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/add_project"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/project_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                tools:text="AwesomeResume - an Android resume app (Mar ~ Aug 2015)" />
-
-            <ImageButton
-                android:layout_width="@dimen/icon_button_size"
-                android:layout_height="@dimen/icon_button_size"
-                android:src="@drawable/ic_mode_edit_black_18dp"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/edit_project"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/project_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_large"
-            tools:text="- Completed xxx using xxx\n- Algorithm\n- Network" />
-
-    </LinearLayout>
+    <!--
+        TODO 4: add ImageView
+        add ImageView with id "user_picture" here
+    -->
 
 </ScrollView>
