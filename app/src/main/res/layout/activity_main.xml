@@ -1,4 +1,4 @@
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,31 +6,56 @@
     tools:context="com.jiuzhang.guojing.awesomeresume.MainActivity">
 
     <!--
-        TODO 5: Combine 4 views by LinearLayout
-        Combine 4 views (name, edit_basic_info, email, user_picture) by 3 nested LinearLayout
-        [1] put name and edit_basic_info into a LinearLayout with orientation "horizontal"
-        [2] put LinearLayout in [1] and email into a LinearLayout with orientation "vertical"
-        [3] put LinearLayout in [2] and user_picture into a LinearLayout with orientation "horizontal"
+        TODO 1: Add TextView
+        Add TextView with id "name" here.
+        Set its text to whatever you want.
     -->
 
     <!--
-        TODO 1: add TextView
-        add TextView with id "name" here
+        TODO 2: Add ImageButton
+        Add ImageButton with id "edit_basic_info" here.
+        Set its image (using android:src attribute) to a pencil.
+        How do we import image asset for the pencil? Check out the slides!
+        What should its width and height be?
     -->
 
     <!--
-        TODO 2: add ImageButton
-        add ImageButton with id "edit_basic_info" here
+        TODO 3: Add TextView
+        Add TextView with id "email" here.
+        Set its text to a random email.
     -->
 
     <!--
-        TODO 3: add TextView
-        add TextView with id "email" here
+        TODO 4: Add ImageView
+        Add ImageView with id "user_picture" here.
+        Set its image (using android:src attribute) to any picture you want.
+        What should its width and height be?
+
+        Whatever picture you want to use, you will need to import first.
+        Check out the slides for how to import custom pictures.
     -->
 
     <!--
-        TODO 4: add ImageView
-        add ImageView with id "user_picture" here
+        TODO 5: Organize 4 views using LinearLayout
+        Organize the 4 views (name, edit_basic_info, email, user_picture) using 3 nested LinearLayout.
+        [1] put name and edit_basic_info into a LinearLayout with orientation "horizontal".
+        [2] put LinearLayout in [1] and email into a LinearLayout with orientation "vertical".
+        [3] put LinearLayout in [2] and user_picture into a LinearLayout with orientation "horizontal".
+
+        How to position user_picture to the right most? Check out "layout_weight" in the slides!
     -->
 
-</ScrollView>
+    <!--
+        TODO 6: UI polish!
+        Does the UI look weird after you have finished the 5 todos?
+        Maybe add some padding (16dp recommended) to the root LinearLayout :)
+
+        Best practice:
+        It's best to put the padding value (or any other size constant, like the size of user_picture)
+        into res/values/dimens.xml. Check out 2_main_ui branch to see how to do that.
+
+        If your res/values folder doesn't contain dimens.xml, you can simply create one by right
+        click on res folder -> New -> Android resource file -> File name: dimens -> OK
+    -->
+
+</LinearLayout>

@@ -1,28 +1,27 @@
 Please check out the following branches in order
-1. basic_profile: basic profile in preview
-2. basic_ui: basic ui in preview
-3. show_fake_education: add fake data and logic in MainActivity, we can run our app from this branch
-4. editable_resume: logic in MainActivity and make our resume "clickable" and "editable"
-5. preference: store data into preference
-6. master
+1. 1_basic_info_ui: basic info part of the main UI
+2. 2_main_ui: all the main UI
+3. 3_fake_data: make the UI display fake data
+4. 4_master: the complete version
 
-
-Current branch: basic_profile
+Current branch: 1_basic_info_ui
 
 Goals:
-Profile is a part of resume, which includes your name, email and profile icon
-It is our first step to finish an awesome resume
-Your preview should look like "preview.png"
+Finish the basic info part of the UI, which shows your name, email and user picture.
+Check out "preview.png" to see what it should look like.
+
+Knowledge points:
+- LinearLayout
+- Nested LinearLayout
+- layout_weight
+- Importing image assets
 
 Workflow:
-1. add TextView with id "name"
-2. add ImageButton with id "edit_basic_info"
-3. add TextView with id "email"
-4. add ImageView with id "user_picture"
-5. combine these four views by LinearLayout
+Check out todos and follow the instructions.
 
 Advise:
-If you have some questions, it is better to search in google(baidu) before asking someone else. You need PRACTICE to learn how to get what you what.
+If you have some questions, it is better to search in google (baidu) before asking someone else.
+You need PRACTICE to learn how to get what you what.
 If you can not find answer, feel free to post your question in jiuzhang.com/qa or QQ group.
 You can see complete code(including code of Challenge) in "master" branch.
 It is always the last step to compare your code with "master"
