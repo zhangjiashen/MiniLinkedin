@@ -1,4 +1,4 @@
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,62 +11,67 @@
         TODO (Challenge 1): Rewrite the below layout using RelativeLayout as opposed to LinearLayout
         As we learned in class, using RelativeLayout to write the below UI is more efficient.
         Why? Re-read the slide (ppt)!
+        optimize the layout
      -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/user_name_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/caption_text_size"
-                    tools:text="Jing Guo" />
-
-                <ImageButton
-                    android:id="@+id/edit_basic_info"
-                    android:layout_width="@dimen/icon_button_size"
-                    android:layout_height="@dimen/icon_button_size"
-                    android:src="@drawable/ic_mode_edit_black_18dp"
-                    android:background="?attr/selectableItemBackground"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/email"
+        android:orientation="vertical">
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="guojing@jiuzhang.com" />
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/user_name_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_vertical">
 
-        <ImageView
-            android:id="@+id/user_picture"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/guojing"/>
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/caption_text_size"
+                        android:text="Jiashen" />
 
-    </LinearLayout>
+                    <ImageButton
+                        android:id="@+id/edit_basic_info"
+                        android:layout_width="@dimen/icon_button_size"
+                        android:layout_height="@dimen/icon_button_size"
+                        android:background="?attr/selectableItemBackground"
+                        android:src="@drawable/ic_mode_edit_black_18dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/user_picture"
+                    android:layout_below="@+id/user_name_layout"
+                    android:text="jiashenz@andrew.cmu.edu" />
+
+
+                <ImageView
+                    android:id="@+id/user_picture"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/guojing" />
+
+            </RelativeLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+
         android:layout_marginTop="@dimen/spacing_large"
         android:layout_marginBottom="@dimen/spacing_small">
 
@@ -78,11 +83,12 @@
             value "Education".
         -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textSize="@dimen/caption_text_size"
             android:textAllCaps="true"
-            android:text="Education" />
+            android:text="@string/section_education" />
 
         <!--
             TODO 2: Add ImageButton and position it to the right most
@@ -91,6 +97,11 @@
             How to import the icon image? Check out "Importing image" in the slide!
             How to position this ImageButton to the right most? Check out "layout_weight" in the slide!
         -->
+        <ImageButton
+            android:id="@+id/add_education_btn"
+            android:layout_width="@dimen/icon_button_size"
+            android:layout_height="@dimen/icon_button_size"
+            android:src="@drawable/ic_add_box_black_36px"/>
 
     </LinearLayout>
 
@@ -105,13 +116,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="CMU (2012 ~ 2016)" />
+            android:text="CMU (2017~2018)" />
 
         <!--
             TODO 3: Add ImageButton
             ImageButton with id "edit_education_btn" and set its image to a "pencil" icon
             Have we already used the "pencil" icon in this file?
         -->
+        <ImageButton
+            android:id="@+id/edit_education_btn"
+            android:layout_width="@dimen/icon_button_size"
+            android:layout_height="@dimen/icon_button_size"
+            android:src="@drawable/ic_create_black_36px"/>
 
     </LinearLayout>
 
@@ -119,7 +135,7 @@
         android:id="@+id/education_courses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="- Database\n- Algorithm\n- Network" />
+        android:text="- Database\n- Algorithm\n- Network" />
 
     <!--
         TODO 4: Run the program! What's wrong?
@@ -139,6 +155,124 @@
         Check out "preview.png" to see what it should look like.
     -->
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+
+            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginBottom="@dimen/spacing_small">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/caption_text_size"
+                android:textAllCaps="true"
+                android:text="@string/section_experience" />
+
+
+            <ImageButton
+                android:id="@+id/add_experience_btn"
+                android:layout_width="@dimen/icon_button_size"
+                android:layout_height="@dimen/icon_button_size"
+                android:src="@drawable/ic_add_box_black_36px"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/company"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Google (2017~2018)" />
+
+
+            <ImageButton
+                android:id="@+id/edit_company_btn"
+                android:layout_width="@dimen/icon_button_size"
+                android:layout_height="@dimen/icon_button_size"
+                android:src="@drawable/ic_create_black_36px"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/skills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- Andriod\n- Full stack\n- Big Data" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+
+            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginBottom="@dimen/spacing_small">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/caption_text_size"
+                android:textAllCaps="true"
+                android:text="@string/section_project" />
+
+
+            <ImageButton
+                android:id="@+id/add_project_btn"
+                android:layout_width="@dimen/icon_button_size"
+                android:layout_height="@dimen/icon_button_size"
+                android:src="@drawable/ic_add_box_black_36px"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/projects"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="AwesomeResume (2017~2017)" />
+
+
+            <ImageButton
+                android:id="@+id/edit_project_btn"
+                android:layout_width="@dimen/icon_button_size"
+                android:layout_height="@dimen/icon_button_size"
+                android:src="@drawable/ic_create_black_36px"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content_projects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- AwesomeResume\n- YO\n- MiniLikedin" />
+    </LinearLayout>
+
+</ScrollView>
+
+<!--
+
+
+-->
     <!--
         TODO 6: Wrap a ScrollView around the root LinearLayout
         Congrats! You have made it this far!
@@ -150,4 +284,3 @@
         How do we solve this? Simple! Just wrap a ScrollView around our LinearLayout.
     -->
 
-</LinearLayout>

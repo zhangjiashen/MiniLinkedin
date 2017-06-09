@@ -1,5 +1,7 @@
 <resources>
 
     <string name="app_name">AwesomeResume</string>
-
+    <string name="section_education">Education</string>
+    <string name="section_experience">Experience</string>
+    <string name="section_project">Project</string>
 </resources>
