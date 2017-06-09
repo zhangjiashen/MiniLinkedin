@@ -3,38 +3,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jiuzhang.guojing.awesomeresume.MainActivity">
+    tools:context="com.jiuzhang.guojing.awesomeresume.MainActivity"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:baselineAligned="false">
 
     <!--
         TODO 1: Add TextView
         Add TextView with id "name" here.
         Set its text to whatever you want.
     -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="horizontal">
 
-    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hello world" />
+
+                <!--
         TODO 2: Add ImageButton
         Add ImageButton with id "edit_basic_info" here.
         Set its image (using android:src attribute) to a pencil.
         How do we import image asset for the pencil? Check out the slides!
         What should its width and height be?
     -->
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_add_black_36px" />
 
-    <!--
-        TODO 3: Add TextView
-        Add TextView with id "email" here.
-        Set its text to a random email.
-    -->
 
-    <!--
-        TODO 4: Add ImageView
-        Add ImageView with id "user_picture" here.
-        Set its image (using android:src attribute) to any picture you want.
-        What should its width and height be?
+            </LinearLayout>
+            <!--
+            TODO 3: Add TextView
+            Add TextView with id "email" here.
+            Set its text to a random email.
+        -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email" />
 
-        Whatever picture you want to use, you will need to import first.
-        Check out the slides for how to import custom pictures.
-    -->
+        </LinearLayout>
+        <!--
+            TODO 4: Add ImageView
+            Add ImageView with id "user_picture" here.
+            Set its image (using android:src attribute) to any picture you want.
+            What should its width and height be?
 
+            Whatever picture you want to use, you will need to import first.
+            Check out the slides for how to import custom pictures.
+        -->
+    <ImageView
+        android:id="@+id/user_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_a_photo_black_36px"/>
+
+    </LinearLayout>
     <!--
         TODO 5: Organize 4 views using LinearLayout
         Organize the 4 views (name, edit_basic_info, email, user_picture) using 3 nested LinearLayout.
